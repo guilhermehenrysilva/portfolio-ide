@@ -1,0 +1,396 @@
+/* ==================== */
+/* Estilos Globais */
+/* ==================== */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2b2b2b;
+    color: #a9b7c6;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  
+  /* ==================== */
+  /* Layout Principal */
+  /* ==================== */
+  .ide-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-right: 1px solid #333;
+  }
+  
+  .sidebar h3 {
+    color: #4fc3f7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 20px 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    color: #a9b7c6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar li:hover {
+    background-color: #333;
+  }
+  
+  .main-content {
+    flex: 1;
+    background-color: #2b2b2b;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* ==================== */
+  /* Página Home */
+  /* ==================== */
+  .file-header {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    color: #4fc3f7;
+    font-weight: bold;
+  }
+  
+  .code-container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  pre {
+    margin: 0;
+  }
+  
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+  }
+
+  .code-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px; /* Ajuste a distância entre as linhas */
+  }
+  
+  
+  /* ==================== */
+  /* Terminal */
+  /* ==================== */
+  .terminal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+    color: #a9b7c6;
+    font-family: 'Courier New', Courier, monospace;
+    transition: height 0.3s ease;
+    z-index: 1000;
+    height: 220px; /* Altura padrão */
+  }
+  
+  .terminal.minimized {
+    height: 40px; /* Altura quando minimizado */
+  }
+  
+  .terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  .terminal-header span {
+    font-weight: bold;
+  }
+  
+  .minimize-button {
+    background: none;
+    border: none;
+    color: #a9b7c6;
+    cursor: pointer;
+  }
+  
+  .minimize-button:hover {
+    color: #ffffff;
+  }
+  
+  .terminal-content {
+    padding: 20px;
+  }
+  
+  .terminal-prefix {
+    margin-bottom: 10px;
+  }
+  
+  .terminal-prefix .user {
+    color: #4fc3f7; /* Cor para o nome do usuário */
+  }
+  
+  .terminal-prefix .path {
+    color: #50fa7b; /* Cor para o caminho */
+  }
+  
+  .terminal-command {
+    margin-bottom: 20px;
+  }
+  
+  .terminal-command .prompt {
+    color: #ff79c6; /* Cor para o prompt ($) */
+  }
+  
+  .terminal-content p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .contact-button {
+    display: flex;
+    align-items: center;
+    background-color: #4fc3f7;
+    color: #1e1e1e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #3ba6d3;
+  }
+  
+  .contact-button .icon {
+    margin-right: 10px;
+  }
+  
+  /* ==================== */
+  /* Listagem de Projetos */
+  /* ==================== */
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas por padrão */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .project-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-card h3 {
+    margin: 0 0 10px;
+    color: #4fc3f7;
+  }
+  
+  .project-card p {
+    margin: 0;
+    color: #a9b7c6;
+  }
+  
+  /* ==================== */
+  /* Media Queries */
+  /* ==================== */
+  
+  /* Telas menores (1366x768) */
+  @media (max-width: 1366px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .sidebar {
+      width: 200px;
+      padding: 15px;
+    }
+  
+    .main-content {
+      padding: 15px;
+    }
+  
+    .code-container {
+      padding: 15px;
+      font-size: 16px;
+    }
+  
+    code {
+      font-size: 14px;
+    }
+  
+    .terminal {
+      height: 220px; /* Altura aumentada para telas menores */
+    }
+  
+    .terminal-content {
+      padding: 15px;
+    }
+  
+    .contact-buttons {
+      gap: 10px;
+    }
+  
+    .contact-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Dispositivos móveis */
+  @media (max-width: 768px) {
+    body {
+      font-size: 12px;
+    }
+  
+    .ide-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #333;
+      padding: 10px;
+    }
+  
+    .sidebar h3 {
+      font-size: 16px;
+    }
+  
+    .sidebar ul {
+      display: flex;
+      gap: 10px;
+    }
+  
+    .sidebar li {
+      padding: 5px 10px;
+    }
+  
+    .main-content {
+      padding: 10px;
+    }
+  
+    .code-container {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    code {
+      font-size: 14px;
+    }
+  
+    .terminal {
+      height: 340px; /* Altura aumentada para dispositivos móveis */
+    }
+  
+    .terminal-content {
+      padding: 10px;
+    }
+  
+    .contact-buttons {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .contact-button {
+      width: 100%;
+      justify-content: center;
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    .project-list {
+      grid-template-columns: 1fr; /* Uma coluna em dispositivos móveis */
+    }
+  }
+
+  /* ==================== */
+/* Números de Linhas no Código */
+/* ==================== */
+.code-with-lines {
+  display: flex;
+  flex-direction: column;
+  counter-reset: line; /* Inicia o contador de linhas */
+}
+
+.code-line {
+  display: flex;
+  align-items: center;
+}
+
+.line-number {
+  width: 40px; /* Largura da coluna de números */
+  text-align: right;
+  padding-right: 10px;
+  color: #6a9955; /* Cor dos números de linha (verde claro) */
+  user-select: none; /* Impede a seleção dos números */
+}
+
+.line-content {
+  flex: 1;
+  white-space: pre-wrap; /* Mantém a formatação do código */
+}
+
+  /* ==================== */
+/* Tema das Linhas de Código */
+/* ==================== */
+.keyword {
+  color: #cc7832; /* Laranja para palavras-chave */
+}
+
+.string {
+  color: #6a8759; /* Verde para strings */
+}
+
+.comment {
+  color: #808080; /* Cinza para comentários */
+}
+
+.class-name {
+  color: #4e94ce; /* Azul para nomes de classes */
+}
+
+.method {
+  color: #ffc66d; /* Amarelo para métodos */
+}
+
+.number {
+  color: #6897bb; /* Azul claro para números */
+}
