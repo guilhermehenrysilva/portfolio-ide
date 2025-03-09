@@ -372,11 +372,11 @@ body {
 /* Tema das Linhas de Código */
 /* ==================== */
 .keyword {
-  color: #cc7832; /* Laranja para palavras-chave */
+  color: #ff79c6; /* Rosa para palavras-chave */
 }
 
 .string {
-  color: #6a8759; /* Verde para strings */
+  color: #e7d360; /* Verde para strings */
 }
 
 .comment {
@@ -384,11 +384,11 @@ body {
 }
 
 .class-name {
-  color: #4e94ce; /* Azul para nomes de classes */
+  color: #7ddcbc; /* Azul para nomes de classes */
 }
 
 .method {
-  color: #ffc66d; /* Amarelo para métodos */
+  color: #4ad95b; /* Verde para métodos */
 }
 
 .number {

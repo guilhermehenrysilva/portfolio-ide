@@ -36,7 +36,7 @@ const Home = () => {
       const codeLines = `
     public class Profile {
       public static void main(String[] args) {
-        ProfileBuilder profile = Profile.builder
+        Profile profile = Profile.builder
           .name("${nome}")
           .age(${idade})
           .city("${cidade}")
